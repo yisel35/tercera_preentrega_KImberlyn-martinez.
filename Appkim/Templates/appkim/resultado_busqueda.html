@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" href="{% static 'appkim/css/styles.css' %}">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Resultado de Búsqueda</h1>
+
+        <form method="get" action="{% url 'buscar' %}">
+            <input type="text" name="query" value="{{ query }}" placeholder="Buscar...">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+
+        <h2>Estudiantes</h2>
+        <ul>
+            {% for Estudiante in estudiante %}
+                <li>{{ Estudiante.nombre }} {{ Estudiante.apellido }} ({{ Estudiante.email }})</li>
+            {% empty %}
+                <li>No se encontraron estudiantes.</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Cursos</h2>
+        <ul>
+            {% for curso in cursos %}
+                <li>{{ curso.nombre }}</li>
+            {% empty %}
+                <li>No se encontraron cursos.</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Profesores</h2>
+        <ul>
+            {% for profesor in profesores %}
+                <li>{{ profesor.nombre }} {{ profesor.apellido }}</li>
+            {% empty %}
+                <li>No se encontraron profesores.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
