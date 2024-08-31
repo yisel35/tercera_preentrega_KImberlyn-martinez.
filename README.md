@@ -23,7 +23,7 @@ Appkim permite a los usuarios registrarse como estudiantes o profesores y accede
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/usuario/appkim.git
+  https://github.com/yisel35/tercera_preentrega_KImberlyn-martinez..git
 2 .Instala las dependencias:
    pip install -r requirements.txt
 3. Realiza las migraciones de la base de datos:
